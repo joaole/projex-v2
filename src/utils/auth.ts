@@ -1,4 +1,4 @@
-import { useAccessStore } from '@/stores/useAccessStore';
+
 import { createClient } from './supabase/client';
 import { users } from './users';
 
@@ -93,7 +93,7 @@ export const auth = {
   // Sign Out
   async signOut() {
     const { error } = await supabase.auth.signOut();
-    useAccessStore.getState().reset();
+    //useAccessStore.getState().reset();
     if (error) throw { message: error.message, status: error.status };
   },
 
